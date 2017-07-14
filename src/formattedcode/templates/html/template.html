@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <title>检测结果</title>
+
+    <style type="text/css">
+       table.report{
+       width:100%;
+        border-collapse:collapse;
+        border: 0px solid white;
+        margin-bottom: 20px;
+      }
+      table.item{
+        width:100%;
+        border-collapse:collapse;
+        border: 1px solid gray;
+        margin-bottom: 20px;
+      }
+      td.report{
+        font-size: 12px;
+        padding: 5px 5px;
+        border-style: solid;
+        border-width: 0px;
+        overflow: hidden;
+      }
+      th.report{
+        font-size: 12px;
+        padding:10px 5px;
+        border-style: solid;
+        border-width: 0px;
+        overflow: hidden;
+        border-color: white;
+        color: black;
+        background-color: white;
+      }
+      td.item{
+        text-align:center;
+        font-size: 12px;
+        padding: 5px 5px;
+        border-style: solid;
+        border-width: 1px;
+        overflow: hidden;
+      }
+      th.item{
+        font-size: 12px;
+        padding:10px 5px;
+        border-style: solid;
+        border-width: 1px;
+        overflow: hidden;
+        border-color: gray;
+        color: #fff;
+        background-color: #A0A0A0;
+      }
+      tr:nth-child(even)  { background-color:#FFFFFF; font-size: 12px;}
+      tr:nth-child(odd) { background-color:#F9F9F9; font-size: 12px;}
+      tr:hover {background-color: #EEEEEE;font-size: 12px;}
+      * {
+        font-family: Helvetica, Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+  <button onclick="{location.href='/savepdf'}">导出PDF</button>
+  <table class="report" border="0" cellpadding="0" cellspacing="0">
+    <tr><th class="report" colspan="2"><h2>开源许可证检测报告</h2></th></tr>
+    <tr>
+    <td class="report" width="10%" border="0">
+    <canvas id="myCanvas" width="100%" height="150" style="border:0px solid #ffffff;">您的浏览器不支持 HTML5 canvas 标签。
+    </canvas>
+      <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx=canvas.getContext("2d");
+        var my_gradient=ctx.createLinearGradient(0,0,0,170);
+        ctx.font="15px Arial";
+        {% if files.isConflict or files.isSameLi or  files.isOpensource or files.isNetdis%}
+        my_gradient.addColorStop(0,"red");
+        my_gradient.addColorStop(1,"white");
+        ctx.fillStyle=my_gradient;
+        ctx.fillRect(canvas.width/2,20,50,300);
+        ctx.fillText("高风险",canvas.width/2+2,18);
+        {% elif  files.isNotPatent or files.isModified %}
+        my_gradient.addColorStop(0,"orange");
+        my_gradient.addColorStop(1,"white");
+        ctx.fillStyle=my_gradient;
+        ctx.fillRect(canvas.width/2,20,50,300);
+        ctx.fillText("中风险",canvas.width/2+2,18);
+        {% elif  files.isTrademark or files.mayConflict  %}    
+        my_gradient.addColorStop(0,"blue");
+        my_gradient.addColorStop(1,"white");
+        ctx.fillStyle=my_gradient;
+        ctx.fillRect(canvas.width/2,20,50,300);
+        ctx.fillText("低风险",canvas.width/2+2,18);
+        {% else %}
+        my_gradient.addColorStop(0,"green");
+        my_gradient.addColorStop(1,"white");
+        ctx.fillStyle=my_gradient;
+        ctx.fillRect(canvas.width/2,20,50,300);
+        ctx.fillText("无风险",canvas.width/2+2,18);
+        {% endif %}
+      </script>
+    </td>
+    <td class="report" width="90%" border="0">
+    {% if files.filename %}
+    软件名称:
+    {{files.filename}}<br>
+    {% endif %}
+    {% if files.filecount %}
+    文件总数:
+    {{files.filecount}}<br>
+    {% endif %}
+    结果总览:您的开源开软软件包含
+    {% if files.license_length %}
+    {{files.license_length}}
+    种许可证，
+    {% endif %}
+    {% if files.license_count %}
+    分别为
+    {%for item in files.license_count%}
+    {{item.licenses}} {{item.count}}个文件，
+    {% endfor %}
+    {% endif %}
+    {% if files.isConflict or files.isSameLi or  files.isOpensource or files.isNetdis or files.isNotPatent or files.isModified or files.isTrademark or files.mayConflict%}
+    您的开源软件存在
+    {% if files.isConflict %}
+    许可证兼容风险，
+    {% endif %}
+    {% if files.isSameLi %}
+    相同许可证要求，
+    {% endif %}
+    {% if files.isOpensource %}
+    商业化风险，
+    {% endif %}
+    {% if files.isNetdis %}
+    服务提供风险，
+    {% endif %}
+    {% if files.isNotPatent %}
+    专利侵权风险，
+    {% endif %}
+    {% if files.isModified %}
+    版权归属风险，
+    {% endif %}
+    {% if files.isTrademark %}
+    商标使用风险，
+    {% endif %}
+    {% if files.mayConflict%}
+    潜在许可证兼容风险，
+    {% endif %}
+    {% endif %}
+    具体请查看以下详情。
+    </td>
+    </tr>
+  </table>
+  <nav>
+    <ul class="nav nav-pills nav-stacked">
+        <li role="presentation"><a href="#Conflict"><h4>警告！点此查看详情...</h4></a></li>
+        <li role="presentation"><a href="#open"><h4>如果您想基于此软件发布开源软件，点此查看详情...</h4></a></li>
+        <li role="presentation"><a href="#commercial"><h4>如果您想基于此软件发布商业软件，点此查看详情...</h4></a></li>
+        <li role="presentation"><a href="#cloud"><h4>如果您想基于此软件提供云服务，点此查看详情...</h4></a></li>
+        <li role="presentation"><a href="#other"><h4>其他需要关注的条款，点此查看详情...</h4></a></li>
+        <li role="presentation"><a href="#all"><h4>所有文件包含的版权和许可证信息，点此查看详情...</h4></a></li>
+        <li role="presentation"><a href="#allLi"><h4>所有许可证相关信息，点此查看详情...</h4></a></li>
+    </ul>
+   </nav>
+    <div id="Conflict">
+    {% if files.isConflict %}
+    <table class="item">
+      <h3>警告！</h3>
+      <h4>以下许可证条款之间存在冲突，不能一起使用</h4>
+      <thead>
+        <tr>
+          <th class="item">许可证1</th>
+          <th class="item">包含许可证1的文件路径</th>
+          <th class="item">许可证2</th>
+          <th class="item">包含许可证2的文件路径</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for data in files.isConflict %}
+            <tr>
+              <td class="item">{{ data.licenses1 }}</td>
+              <td class="item">
+              {% for item in data.loacal1 %}
+              {{item}}<br />
+              {% endfor %}
+              </td>
+              <td class="item">{{ data.licenses2 }}</td>
+              <td class="item">
+              {% for item in data.loacal2 %}
+              {{item}}<br />
+              {% endfor %}
+              </td>
+            </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+    </div>
+    
+    <div id="open">
+    {% if files.isSameLi %}
+    <table class="item">
+      <h3>如果您想基于此软件发布开源软件，请注意：</h3>
+      <h4>以下文件的许可证要求衍生作品必须采用同一许可证</h4>
+      <thead>
+        <tr>
+          <th class="item">许可证</th>
+          <th class="item">包含许可证的文件路径</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for data in files.isSameLi %}
+            <tr>
+              <td class="item">{{ data.licenses }}</td>
+              <td class="item">
+              {% for item in data.loacal %}
+              {{item}}<br />
+              {% endfor %}
+              </td>
+            </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+    </div>
+    
+    <div id="commercial">
+    {% if files.isOpensource %}
+    <table class="item">
+    <h3>如果您想基于此软件发布商业软件，请注意：</h3>
+      <h4>以下文件的许可证不允许衍生作品闭源发布</h4>
+      <thead>
+        <tr>
+          <th class="item">许可证</th>
+          <th class="item">包含许可证的文件路径</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for data in files.isOpensource %}
+            <tr>
+              <td class="item">{{ data.licenses }}</td>
+              <td class="item">
+              {% for item in data.loacal %}
+              {{item}}<br />
+              {% endfor %}
+              </td>
+            </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+    </div>
+    
+    <div id="cloud">
+    {% if files.isNetdis %}
+    <table class="item">
+    <h3>如果您想基于此软件提供云服务，请注意：</h3>
+      <h4>以下文件的许可证不允许衍生作品闭源提供服务</h4>
+      <thead>
+        <tr>
+          <th class="item">许可证</th>
+          <th class="item">包含许可证的文件路径</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for data in files.isNetdis %}
+            <tr>
+              <td class="item">{{ data.licenses }}</td>
+              <td class="item">
+              {% for item in data.loacal %}
+              {{item}}<br />
+              {% endfor %}
+              </td>
+            </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+    </div>
+    
+    <div id="other">
+    <h3>另外，以下条款您也需要关注：</h3>
+    {% if files.isNotPatent %}
+    <table class="item">
+      <h4>以下文件的许可证不承认衍生作品申请专利</h4>
+      <thead>
+        <tr>
+          <th class="item">许可证</th>
+          <th class="item">包含许可证的文件路径</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for data in files.isNotPatent %}
+            <tr>
+              <td class="item">{{ data.licenses }}</td>
+              <td class="item"> 
+              {% for item in data.loacal %}
+              {{item}}<br />
+              {% endfor %}
+              </td>
+            </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+    {% if files.isModified %}
+    <table class="item">
+      <h4>以下文件的许可证要求衍生作品必须声明修改以明确版权</h4>
+      <thead>
+        <tr>
+          <th class="item">许可证</th>
+          <th class="item">包含许可证的文件路径</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for data in files.isModified %}
+            <tr>
+              <td class="item">{{ data.licenses }}</td>
+              <td class="item">
+              {% for item in data.loacal %}
+              {{item}}<br />
+              {% endfor %}
+              </td>
+            </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+    {% if files.isTrademark %}
+    <table class="item">
+      <h4>以下文件的许可证不承认衍生作品申请商标</h4>
+      <thead>
+        <tr>
+          <th class="item">许可证</th>
+          <th class="item">包含许可证的文件路径</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for data in files.isTrademark %}
+            <tr>
+              <td class="item">{{ data.licenses }}</td>
+              <td class="item">
+              {% for item in data.loacal %}
+              {{item}}<br />
+              {% endfor %}
+              </td>
+            </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+    
+    {% if files.mayConflict %}
+    <table class="item">
+      <h4>可能会产生冲突的许可证</h4>
+      <thead>
+        <tr>
+          <th class="item">当前软件的许可证</th>
+          <th class="item">会产生冲突的许可证</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for data in files.mayConflict %}
+            <tr>
+              <td class="item">{{ data.licenses }}</td>
+              <td class="item">{% for cf in data.maycf %}
+                  {{cf}}<br />
+                  {% endfor %}
+              </td>
+            </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+    </div>
+    
+    <div id="all">
+    {% if files.license_copyright %}
+    <table class="item">
+      <h3>所有版权和许可证信息</h3>
+      <thead>
+        <tr>
+          <th class="item">文件路径</th>
+          <th class="item">开始位置</th>
+          <th class="item">结束位置</th>
+          <th class="item">信息类型</th>
+          <th class="item">许可证/版权详情</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for path, data in files.license_copyright.items() %}
+          {% for row in data %}
+            <tr>
+              <td class="item">{{ path }}</td>
+              <td class="item">{{ row.start }}</td>
+              <td class="item">{{ row.end }}</td>
+              <td class="item">{{ row.what }}</td>
+              {% if row.what == 'license' %}
+                <td class="item"><a href="#license_{{ row.value }}">{{ row.value }}</a></td>
+              {% else %}
+                <td class="item">{{ row.value|escape }}</td>
+              {% endif %}
+            </tr>
+          {% endfor %}
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+    </div>
+
+    <div id="allLi">
+    {% if licenses %}
+    <table class="item">
+      <h3>所有许可证详细信息</h3>
+      <thead>
+        <tr>
+          <th class="item" id = "test">许可证名称</th>
+          <th class="item">类型</th>
+          <th class="item">许可证归属</th>
+          <th class="item">官方链接</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for key, license in licenses.items() %}
+          <tr id="license_{{ license.key }}">
+            <td class="item">{{ license.key }}</td>
+            <td class="item">{{ license.category }}</td>
+            <td class="item">{{ license.owner }}</td> 
+            <td class="item">{{ license.text_url|urlize(target='_blank') }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+   </div>
+  </body>
+</html>

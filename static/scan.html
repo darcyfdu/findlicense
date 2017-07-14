@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>开源许可证检测系统</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/foundation/5.5.3/css/foundation.min.css">
+  <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://cdn.static.runoob.com/libs/foundation/5.5.3/js/foundation.min.js"></script>
+  <script src="http://cdn.static.runoob.com/libs/foundation/5.5.3/js/vendor/modernizr.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script type="text/javascript">
+        function upload(){
+            var form = document.getElementById("uploadForm");
+            var file = form["file1"].value.toLowerCase();
+            var url = form["giturl"].value.toLowerCase();
+            if(isNull(file)&&isNull(url)){
+                $("#msg").html("必须上传文件或者填写仓库地址");
+                $(".alert").show();
+                return;
+            }
+            if((!isNull(url))&&(!isGiturl(url))){
+                $("#msg").html("仓库地址必须是.git结尾的地址");
+                $(".alert").show();
+                return;
+            }
+            if((!isCompressFile(file))&&isNull(url)){
+                $("#msg").html("压缩文件格式必须是zip、bz2或者gz");
+                $(".alert").show();
+                return;
+            }
+            $(".progress-bar").addClass("active");
+            var p = parseFloat((1 * 100).toFixed(2))+"%";
+                $(".progress-bar").css("width",p).html("上传检测中");
+            form.submit();
+        }
+        function test(){
+            $("input[type='file']", document.forms[0]).each(function(index,file){
+                file.value = null;
+            });
+        }
+        function isNull(x){
+            if (x==null || x=="")
+                return true;
+            return false;
+        }
+        function isCompressFile(x){
+            var index = x.lastIndexOf(".");
+            if(index<1)
+                return false;
+            var format = x.substring(index+1);
+            if (format!="bz2" && format!="gz" && format!="zip"&& format!="xz")
+                return false;
+            return true;
+        }
+        function isGiturl(x){
+            var index = x.lastIndexOf(".");
+            if(index<1)
+                return false;
+            var format = x.substring(index+1);
+            if (format!="git")
+                return false;
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+<div class="container" style="position:fixed;width:100%;height:100%;top;0;left:0">
+<div class="row" style="margin:0 auto;position:relative;top:50%;transform:translateY(-50%);">
+<div class="small-12 medium-8 large-6 small-centered medium-centered large-centered columns">
+      <div class="row">
+              <img src="/static/fudan.jpg" alt="fudan">
+      </div>
+      <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">文件上传</h3>
+      </div>
+      <div class="panel-body">
+          <div class="alert alert-danger alert-dismissable" style="display:none;">
+           <button type="button" class="close" onclick="$('.alert').hide();" 
+              aria-hidden="true">
+              &times;
+           </button>
+           <span id="msg">错误提示信息</span>
+        </div>
+        <form id="uploadForm" action="/test" method="post" enctype="multipart/form-data">
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">文件</span>
+              <input name="file1" type="file" class="form-control" aria-describedby="basic-addon1">
+            </div>
+            <p></p>
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon2">仓库地址</span>
+              <input name="giturl" type="text" class="form-control" aria-describedby="basic-addon1">
+            </div>
+            <p></p>
+            <div class="progress">
+              <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                上传中
+              </div>
+            </div>
+            </form>
+            <div style="text-align: center;">
+                <button type="button" onclick="upload()" class="btn btn-primary" autocomplete="off">
+                  上传
+                </button>
+                <button type="button" onclick="test()" class="btn btn-primary" autocomplete="off">
+                  重置
+                </button>
+            </div>
+      </div>
+    </div>
+</div>
+</div>
+</div>
+<script>
+$(document).ready(function() {
+       $(document).foundation();
+})
+</script>
+</body>
+</html>
