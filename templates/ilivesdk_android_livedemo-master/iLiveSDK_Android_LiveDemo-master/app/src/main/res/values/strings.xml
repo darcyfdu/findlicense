@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">ILiveSDKDemo</string>
+
+    <string name="tip_menu_title">ILiveSDK Demo示例</string>
+
+    <!-- 登录 -->
+    <string name="str_tip_account">用户名</string>
+    <string name="str_hit_account">请输入用户名</string>
+    <string name="str_tip_password">密码</string>
+    <string name="str_hit_password">请输入密码</string>
+
+    <string name="hit_regist_account">用户名为4~24个字符</string>
+    <string name="hit_regist_password">密码长度为8~16个字符</string>
+    <string name="hit_special_chat">不允许特殊字符</string>
+
+    <!-- 提示信息 -->
+    <string name="msg_title">提示</string>
+    <string name="msg_input_empty">用户名或密码不能为空</string>
+    <string name="msg_regist_success">注册成功</string>
+    <string name="livesdk_sdk_demo">LiveSDK Demo</string>
+    <string name="livesdk_demo_ilivesdk_intr">LiveSDK demo是腾讯云互动直播解决方案演示ILiveSDK常用功能应用的Demo</string>
+    <string name="msg_send_empty">发送内容不能为空</string>
+    <string name="live_title_link">主播串门</string>
+    <string name="link_start_tips">已同意您的跨房连麦邀请，是否现在开始跨房连麦?</string>
+    <string name="link_req_tips">邀请您跨房连麦，是否同意?</string>
+    <string name="link_refuse_tips">已拒绝您的跨房连麦邀请!</string>
+    <string name="tip_not_support">Demo暂不支持该功能</string>
+    <string name="str_log_upload_hit">0-当天，1-昨天，2-前天，以此类推</string>
+    <string name="str_log_upload_tips">输入要上报的日志的日期</string>
+
+
+    <!-- 标题 -->
+    <string name="str_menu_host">开播</string>
+    <string name="str_menu_guest">观看</string>
+    <string name="str_menu_cross">跨房连麦</string>
+    <string name="str_menu_beauty">美颜</string>
+    <string name="str_menu_live_guest">上麦</string>
+    <string name="str_menu_replay">回放</string>
+    <string name="str_menu_log">日志上报</string>
+
+    <!-- 按钮 -->
+    <string name="str_btn_regist">注册</string>
+    <string name="str_btn_login">登录</string>
+    <string name="str_btn_create">创建</string>
+    <string name="str_btn_join">加入</string>
+    <string name="str_btn_send">发送</string>
+    <string name="str_btn_cross">跨房</string>
+    <string name="str_btn_cancel">取消</string>
+    <string name="str_btn_refuse">拒绝</string>
+    <string name="str_btn_agree">同意</string>
+    <string name="str_btn_log_upload">上报</string>
+
+    <!-- 其它 -->
+    <string name="str_tip_beauty">美颜</string>
+    <string name="str_tip_white">美白</string>
+    <string name="str_title_btu_type">美颜类型</string>
+    <string name="str_title_btu_avsdk">内置美颜</string>
+    <string name="str_title_btu_ilive">插件美颜</string>
+
+    <string-array name="str_btu_type">
+        <item>内置美颜</item>
+        <item>插件美颜</item>
+    </string-array>
+</resources>

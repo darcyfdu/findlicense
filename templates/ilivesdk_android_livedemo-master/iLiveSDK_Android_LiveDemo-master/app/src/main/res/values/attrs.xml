@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 菜单控件自定义属性 -->
+    <declare-styleable name="lmvattr">
+        <!-- 图标 -->
+        <attr name="icon" format="reference"/>
+        <!-- 标题 -->
+        <attr name="title" format="string"/>
+    </declare-styleable>
+</resources>
