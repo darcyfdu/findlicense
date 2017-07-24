@@ -55,9 +55,56 @@ def licenses():
     for row in cursor:
         licensenslist.append({'name':row[0],'owner':row[1],'url':row[2],'isNet':(row[0] in netdisLi),'isTM':(row[0] in TMLi),'isSame':(row[0] in sameLi),'isOS':(row[0] in openLi),'isNP':(row[0] in notPatLi),'isMo':(row[0] in ModLi)})
     return '{"results":'+json.dumps(licensenslist,encoding="utf-8")+'}'
-@app.route('/setting', methods=['GET', 'POST'])
+@app.route('/new', methods=['GET', 'POST'])
 def setting():
-    return render_template('setting.html')
+    return render_template('new.html')
+@app.route('/addlicense', methods=['GET', 'POST'])
+def addlicense():
+    conn = sqlite3.connect('data.db')
+    if(request.form['name']):
+        name = request.form['name']
+        licensefile = open("src/licensedcode/data/licenses/"+name+'.LICENSE', "w+")
+	ymlfile = open("src/licensedcode/data/licenses/"+name+'.yml', "w+")
+	ymlfile.write('key: '+name+'\n')
+    if(request.form['fullname']):
+        fullname = request.form['fullname']
+        ymlfile.write('name: '+fullname+'\n')
+    if(request.form['owner']):
+        owner = request.form['owner']
+        ymlfile.write('owner: '+owner+'\n')
+    if(request.form['ownerurl']):
+        ownerurl = request.form['ownerurl']
+        ymlfile.write('homepage_url: '+ownerurl+'\n')
+        ymlfile.write('text_urls: '+ownerurl+'\n')
+        ymlfile.close()
+        conn.execute("INSERT INTO LICENSESLIST (NAME,OWER,URL) VALUES (?,?,?)",(name,owner,ownerurl))
+        conn.commit()
+    if(request.form.getlist('atts')):
+        atts = request.form.getlist('atts')
+        if('0' in atts):
+            conn.execute("INSERT INTO OPENSOURCELICENSE (NAME) VALUES (?)",(name,))
+            conn.commit()
+        if('1' in atts):
+            conn.execute("INSERT INTO NETDISTRIBUTIONLICENSE (NAME) VALUES (?)",(name,))
+            conn.commit()
+        if('2' in atts):
+            conn.execute("INSERT INTO sameLicense (NAME) VALUES (?)",(name,))
+            conn.commit()
+        if('3' in atts):
+            conn.execute("INSERT INTO NOTPATENTLICENSE (NAME) VALUES (?)",(name,))
+            conn.commit()
+        if('4' in atts):
+            conn.execute("INSERT INTO TRADEMARKLICENSE (NAME) VALUES (?)",(name,))
+            conn.commit()
+        if('5' in atts):
+            conn.execute("INSERT INTO ModIFYLICENSE (NAME) VALUES (?)",(name,))
+            conn.commit()
+    if(request.form['textall']):
+        textall = request.form['textall']
+        licensefile.write(textall+'\n')
+        licensefile.close()
+    conn.close()
+    return '添加成功!'
 @app.route('/test', methods=['GET', 'POST'])
 def test():
     if(request.form['giturl']):

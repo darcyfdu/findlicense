@@ -1,0 +1,1721 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <title>检测结果</title>
+
+    <style type="text/css">
+       table.report{
+       width:100%;
+        border-collapse:collapse;
+        border: 0px solid white;
+        margin-bottom: 20px;
+      }
+      table.item{
+        width:100%;
+        border-collapse:collapse;
+        border: 1px solid gray;
+        margin-bottom: 20px;
+      }
+      td.report{
+        font-size: 12px;
+        padding: 5px 5px;
+        border-style: solid;
+        border-width: 0px;
+        overflow: hidden;
+      }
+      th.report{
+        font-size: 12px;
+        padding:10px 5px;
+        border-style: solid;
+        border-width: 0px;
+        overflow: hidden;
+        border-color: white;
+        color: black;
+        background-color: white;
+      }
+      td.item{
+        text-align:center;
+        font-size: 12px;
+        padding: 5px 5px;
+        border-style: solid;
+        border-width: 1px;
+        overflow: hidden;
+      }
+      th.item{
+        font-size: 12px;
+        padding:10px 5px;
+        border-style: solid;
+        border-width: 1px;
+        overflow: hidden;
+        border-color: gray;
+        color: #fff;
+        background-color: #A0A0A0;
+      }
+      tr:nth-child(even)  { background-color:#FFFFFF; font-size: 12px;}
+      tr:nth-child(odd) { background-color:#F9F9F9; font-size: 12px;}
+      tr:hover {background-color: #EEEEEE;font-size: 12px;}
+      * {
+        font-family: Helvetica, Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+  <button onclick="{location.href='/savepdf'}">导出PDF</button>
+  <table class="report" border="0" cellpadding="0" cellspacing="0">
+    <tr><th class="report" colspan="2"><h2>开源许可证检测报告</h2></th></tr>
+    <tr>
+    <td class="report" width="10%" border="0">
+    <canvas id="myCanvas" width="100%" height="150" style="border:0px solid #ffffff;">您的浏览器不支持 HTML5 canvas 标签。
+    </canvas>
+      <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx=canvas.getContext("2d");
+        var my_gradient=ctx.createLinearGradient(0,0,0,170);
+        ctx.font="15px Arial";
+        
+        my_gradient.addColorStop(0,"orange");
+        my_gradient.addColorStop(1,"white");
+        ctx.fillStyle=my_gradient;
+        ctx.fillRect(canvas.width/2,20,50,300);
+        ctx.fillText("中风险",canvas.width/2+2,18);
+        
+      </script>
+    </td>
+    <td class="report" width="90%" border="0">
+    
+    软件名称:
+    cjson-master<br>
+    
+    
+    文件总数:
+    248<br>
+    
+    结果总览:您的开源开软软件包含
+    
+    2
+    种许可证，
+    
+    
+    分别为
+    
+    apache-2.0 1个文件，
+    
+    mit 61个文件，
+    
+    
+    
+    您的开源软件存在
+    
+    
+    
+    
+    
+    
+    版权归属风险，
+    
+    
+    商标使用风险，
+    
+    
+    
+    具体请查看以下详情。
+    </td>
+    </tr>
+  </table>
+  <nav>
+    <ul class="nav nav-pills nav-stacked">
+        <li role="presentation"><a href="#Conflict"><h4>警告！点此查看详情...</h4></a></li>
+        <li role="presentation"><a href="#open"><h4>如果您想基于此软件发布开源软件，点此查看详情...</h4></a></li>
+        <li role="presentation"><a href="#commercial"><h4>如果您想基于此软件发布商业软件，点此查看详情...</h4></a></li>
+        <li role="presentation"><a href="#cloud"><h4>如果您想基于此软件提供云服务，点此查看详情...</h4></a></li>
+        <li role="presentation"><a href="#other"><h4>其他需要关注的条款，点此查看详情...</h4></a></li>
+        <li role="presentation"><a href="#all"><h4>所有文件包含的版权和许可证信息，点此查看详情...</h4></a></li>
+        <li role="presentation"><a href="#allLi"><h4>所有许可证相关信息，点此查看详情...</h4></a></li>
+    </ul>
+   </nav>
+    <div id="Conflict">
+    
+    </div>
+    
+    <div id="open">
+    
+    </div>
+    
+    <div id="commercial">
+    
+    </div>
+    
+    <div id="cloud">
+    
+    </div>
+    
+    <div id="other">
+    <h3>另外，以下条款您也需要关注：</h3>
+    
+    
+    <table class="item">
+      <h4>以下文件的许可证要求衍生作品必须声明修改以明确版权</h4>
+      <thead>
+        <tr>
+          <th class="item">许可证</th>
+          <th class="item">包含许可证的文件路径</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+            <tr>
+              <td class="item">apache-2.0</td>
+              <td class="item">
+              
+              cjson-master/cJSON-master/tests/json-patch-tests/README.md<br />
+              
+              </td>
+            </tr>
+        
+      </tbody>
+    </table>
+    
+    
+    <table class="item">
+      <h4>以下文件的许可证不承认衍生作品申请商标</h4>
+      <thead>
+        <tr>
+          <th class="item">许可证</th>
+          <th class="item">包含许可证的文件路径</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+            <tr>
+              <td class="item">apache-2.0</td>
+              <td class="item">
+              
+              cjson-master/cJSON-master/tests/json-patch-tests/README.md<br />
+              
+              </td>
+            </tr>
+        
+      </tbody>
+    </table>
+    
+    
+    
+    </div>
+    
+    <div id="all">
+    
+    <table class="item">
+      <h3>所有版权和许可证信息</h3>
+      <thead>
+        <tr>
+          <th class="item">文件路径</th>
+          <th class="item">开始位置</th>
+          <th class="item">结束位置</th>
+          <th class="item">信息类型</th>
+          <th class="item">许可证/版权详情</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/cJSON_Utils.c</td>
+              <td class="item">2</td>
+              <td class="item">2</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2009-2017 Dave Gamble</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/cJSON_Utils.c</td>
+              <td class="item">4</td>
+              <td class="item">20</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/cJSON_Utils.h</td>
+              <td class="item">2</td>
+              <td class="item">2</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2009-2017 Dave Gamble</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/cJSON_Utils.h</td>
+              <td class="item">4</td>
+              <td class="item">20</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/test.c</td>
+              <td class="item">2</td>
+              <td class="item">2</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2009-2017 Dave Gamble</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/test.c</td>
+              <td class="item">4</td>
+              <td class="item">20</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/LICENSE</td>
+              <td class="item">1</td>
+              <td class="item">1</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2009-2017 Dave Gamble</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/LICENSE</td>
+              <td class="item">3</td>
+              <td class="item">19</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/cJSON.c</td>
+              <td class="item">2</td>
+              <td class="item">2</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2009-2017 Dave Gamble</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/cJSON.c</td>
+              <td class="item">4</td>
+              <td class="item">20</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/README.md</td>
+              <td class="item">15</td>
+              <td class="item">17</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/README.md</td>
+              <td class="item">19</td>
+              <td class="item">19</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2009-2017 Dave Gamble</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/README.md</td>
+              <td class="item">21</td>
+              <td class="item">37</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/cJSON.h</td>
+              <td class="item">2</td>
+              <td class="item">2</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2009-2017 Dave Gamble</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/cJSON.h</td>
+              <td class="item">4</td>
+              <td class="item">20</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/fuzzing/afl.c</td>
+              <td class="item">2</td>
+              <td class="item">2</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2009-2017 Dave Gamble</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/fuzzing/afl.c</td>
+              <td class="item">4</td>
+              <td class="item">20</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/old_utils_tests.c</td>
+              <td class="item">2</td>
+              <td class="item">2</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2009-2017 Dave Gamble</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/old_utils_tests.c</td>
+              <td class="item">4</td>
+              <td class="item">20</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/parse_hex4.c</td>
+              <td class="item">2</td>
+              <td class="item">2</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2009-2017 Dave Gamble</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/parse_hex4.c</td>
+              <td class="item">4</td>
+              <td class="item">20</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/print_number.c</td>
+              <td class="item">2</td>
+              <td class="item">2</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2009-2017 Dave Gamble</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/print_number.c</td>
+              <td class="item">4</td>
+              <td class="item">20</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/misc_utils_tests.c</td>
+              <td class="item">2</td>
+              <td class="item">2</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2009-2017 Dave Gamble</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/misc_utils_tests.c</td>
+              <td class="item">4</td>
+              <td class="item">20</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/common.h</td>
+              <td class="item">2</td>
+              <td class="item">2</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2009-2017 Dave Gamble</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/common.h</td>
+              <td class="item">4</td>
+              <td class="item">20</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/parse_string.c</td>
+              <td class="item">2</td>
+              <td class="item">2</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2009-2017 Dave Gamble</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/parse_string.c</td>
+              <td class="item">4</td>
+              <td class="item">20</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/print_object.c</td>
+              <td class="item">2</td>
+              <td class="item">2</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2009-2017 Dave Gamble</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/print_object.c</td>
+              <td class="item">4</td>
+              <td class="item">20</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/misc_tests.c</td>
+              <td class="item">2</td>
+              <td class="item">2</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2009-2017 Dave Gamble</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/misc_tests.c</td>
+              <td class="item">4</td>
+              <td class="item">20</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/parse_examples.c</td>
+              <td class="item">2</td>
+              <td class="item">2</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2009-2017 Dave Gamble</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/parse_examples.c</td>
+              <td class="item">4</td>
+              <td class="item">20</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/print_value.c</td>
+              <td class="item">2</td>
+              <td class="item">2</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2009-2017 Dave Gamble</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/print_value.c</td>
+              <td class="item">4</td>
+              <td class="item">20</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/print_string.c</td>
+              <td class="item">2</td>
+              <td class="item">2</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2009-2017 Dave Gamble</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/print_string.c</td>
+              <td class="item">4</td>
+              <td class="item">20</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/print_array.c</td>
+              <td class="item">2</td>
+              <td class="item">2</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2009-2017 Dave Gamble</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/print_array.c</td>
+              <td class="item">4</td>
+              <td class="item">20</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/parse_number.c</td>
+              <td class="item">2</td>
+              <td class="item">2</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2009-2017 Dave Gamble</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/parse_number.c</td>
+              <td class="item">4</td>
+              <td class="item">20</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/json_patch_tests.c</td>
+              <td class="item">2</td>
+              <td class="item">2</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2009-2017 Dave Gamble</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/json_patch_tests.c</td>
+              <td class="item">4</td>
+              <td class="item">20</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/parse_value.c</td>
+              <td class="item">2</td>
+              <td class="item">2</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2009-2017 Dave Gamble</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/parse_value.c</td>
+              <td class="item">4</td>
+              <td class="item">20</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/parse_with_opts.c</td>
+              <td class="item">2</td>
+              <td class="item">2</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2009-2017 Dave Gamble</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/parse_with_opts.c</td>
+              <td class="item">4</td>
+              <td class="item">20</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/compare_tests.c</td>
+              <td class="item">2</td>
+              <td class="item">2</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2009-2017 Dave Gamble</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/compare_tests.c</td>
+              <td class="item">4</td>
+              <td class="item">20</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/common.c</td>
+              <td class="item">2</td>
+              <td class="item">2</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2009-2017 Dave Gamble</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/common.c</td>
+              <td class="item">4</td>
+              <td class="item">20</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/parse_array.c</td>
+              <td class="item">2</td>
+              <td class="item">2</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2009-2017 Dave Gamble</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/parse_array.c</td>
+              <td class="item">4</td>
+              <td class="item">20</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/parse_object.c</td>
+              <td class="item">2</td>
+              <td class="item">2</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2009-2017 Dave Gamble</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/parse_object.c</td>
+              <td class="item">4</td>
+              <td class="item">20</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/README.md</td>
+              <td class="item">4</td>
+              <td class="item">5</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2007 - 2017 Unity Project</td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/docs/license.txt</td>
+              <td class="item">1</td>
+              <td class="item">1</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/docs/license.txt</td>
+              <td class="item">3</td>
+              <td class="item">3</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2007-14 Mike Karlesky, Mark VanderVoord, Greg Williams</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/docs/license.txt</td>
+              <td class="item">5</td>
+              <td class="item">21</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/test/rakefile</td>
+              <td class="item">2</td>
+              <td class="item">4</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2007 Mike Karlesky, Mark VanderVoord, Greg Williams</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/test/rakefile</td>
+              <td class="item">4</td>
+              <td class="item">4</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/test/rakefile_helper.rb</td>
+              <td class="item">2</td>
+              <td class="item">4</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2007 Mike Karlesky, Mark VanderVoord, Greg Williams</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/test/rakefile_helper.rb</td>
+              <td class="item">4</td>
+              <td class="item">4</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/test/tests/test_generate_test_runner.rb</td>
+              <td class="item">2</td>
+              <td class="item">4</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2007 Mike Karlesky, Mark VanderVoord, Greg Williams</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/test/tests/test_generate_test_runner.rb</td>
+              <td class="item">4</td>
+              <td class="item">4</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/test/tests/testunity.c</td>
+              <td class="item">2</td>
+              <td class="item">4</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2007 Mike Karlesky, Mark VanderVoord, Greg Williams</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/test/tests/testunity.c</td>
+              <td class="item">4</td>
+              <td class="item">4</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/test/tests/testparameterized.c</td>
+              <td class="item">2</td>
+              <td class="item">4</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2007 Mike Karlesky, Mark VanderVoord, Greg Williams</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/test/tests/testparameterized.c</td>
+              <td class="item">4</td>
+              <td class="item">4</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/readme.txt</td>
+              <td class="item">1</td>
+              <td class="item">1</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2010 James Grenning</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/readme.txt</td>
+              <td class="item">3</td>
+              <td class="item">5</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2007 Mike Karlesky, Mark VanderVoord, Greg Williams</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/readme.txt</td>
+              <td class="item">5</td>
+              <td class="item">5</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/rakefile.rb</td>
+              <td class="item">2</td>
+              <td class="item">4</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2007 Mike Karlesky, Mark VanderVoord, Greg Williams</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/rakefile.rb</td>
+              <td class="item">4</td>
+              <td class="item">4</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/rakefile_helper.rb</td>
+              <td class="item">2</td>
+              <td class="item">4</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2007 Mike Karlesky, Mark VanderVoord, Greg Williams</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/rakefile_helper.rb</td>
+              <td class="item">4</td>
+              <td class="item">4</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/test/template_fixture_tests.c</td>
+              <td class="item">1</td>
+              <td class="item">1</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2010 James Grenning</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/test/template_fixture_tests.c</td>
+              <td class="item">3</td>
+              <td class="item">5</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2007 Mike Karlesky, Mark VanderVoord, Greg Williams</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/test/template_fixture_tests.c</td>
+              <td class="item">5</td>
+              <td class="item">5</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/test/unity_output_Spy.c</td>
+              <td class="item">1</td>
+              <td class="item">1</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2010 James Grenning</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/test/unity_output_Spy.c</td>
+              <td class="item">3</td>
+              <td class="item">5</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2007 Mike Karlesky, Mark VanderVoord, Greg Williams</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/test/unity_output_Spy.c</td>
+              <td class="item">5</td>
+              <td class="item">5</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/test/unity_output_Spy.h</td>
+              <td class="item">1</td>
+              <td class="item">1</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2010 James Grenning</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/test/unity_output_Spy.h</td>
+              <td class="item">3</td>
+              <td class="item">5</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2007 Mike Karlesky, Mark VanderVoord, Greg Williams</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/test/unity_output_Spy.h</td>
+              <td class="item">5</td>
+              <td class="item">5</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/test/unity_fixture_TestRunner.c</td>
+              <td class="item">1</td>
+              <td class="item">1</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2010 James Grenning</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/test/unity_fixture_TestRunner.c</td>
+              <td class="item">3</td>
+              <td class="item">5</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2007 Mike Karlesky, Mark VanderVoord, Greg Williams</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/test/unity_fixture_TestRunner.c</td>
+              <td class="item">5</td>
+              <td class="item">5</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/test/unity_fixture_Test.c</td>
+              <td class="item">1</td>
+              <td class="item">1</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2010 James Grenning</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/test/unity_fixture_Test.c</td>
+              <td class="item">3</td>
+              <td class="item">5</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2007 Mike Karlesky, Mark VanderVoord, Greg Williams</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/test/unity_fixture_Test.c</td>
+              <td class="item">5</td>
+              <td class="item">5</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/test/main/AllTests.c</td>
+              <td class="item">1</td>
+              <td class="item">1</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2010 James Grenning</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/test/main/AllTests.c</td>
+              <td class="item">3</td>
+              <td class="item">5</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2007 Mike Karlesky, Mark VanderVoord, Greg Williams</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/test/main/AllTests.c</td>
+              <td class="item">5</td>
+              <td class="item">5</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/src/unity_fixture.c</td>
+              <td class="item">1</td>
+              <td class="item">1</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2010 James Grenning</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/src/unity_fixture.c</td>
+              <td class="item">3</td>
+              <td class="item">5</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2007 Mike Karlesky, Mark VanderVoord, Greg Williams</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/src/unity_fixture.c</td>
+              <td class="item">5</td>
+              <td class="item">5</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/src/unity_fixture_internals.h</td>
+              <td class="item">1</td>
+              <td class="item">1</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2010 James Grenning</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/src/unity_fixture_internals.h</td>
+              <td class="item">3</td>
+              <td class="item">5</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2007 Mike Karlesky, Mark VanderVoord, Greg Williams</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/src/unity_fixture_internals.h</td>
+              <td class="item">5</td>
+              <td class="item">5</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/src/unity_fixture_malloc_overrides.h</td>
+              <td class="item">1</td>
+              <td class="item">1</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2010 James Grenning</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/src/unity_fixture_malloc_overrides.h</td>
+              <td class="item">3</td>
+              <td class="item">5</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2007 Mike Karlesky, Mark VanderVoord, Greg Williams</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/src/unity_fixture_malloc_overrides.h</td>
+              <td class="item">5</td>
+              <td class="item">5</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/src/unity_fixture.h</td>
+              <td class="item">1</td>
+              <td class="item">1</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2010 James Grenning</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/src/unity_fixture.h</td>
+              <td class="item">3</td>
+              <td class="item">5</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2007 Mike Karlesky, Mark VanderVoord, Greg Williams</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/extras/fixture/src/unity_fixture.h</td>
+              <td class="item">5</td>
+              <td class="item">5</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/auto/test_file_filter.rb</td>
+              <td class="item">2</td>
+              <td class="item">4</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2007 Mike Karlesky, Mark VanderVoord, Greg Williams</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/auto/test_file_filter.rb</td>
+              <td class="item">4</td>
+              <td class="item">4</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/auto/colour_prompt.rb</td>
+              <td class="item">2</td>
+              <td class="item">4</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2007 Mike Karlesky, Mark VanderVoord, Greg Williams</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/auto/colour_prompt.rb</td>
+              <td class="item">4</td>
+              <td class="item">4</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/auto/colour_reporter.rb</td>
+              <td class="item">2</td>
+              <td class="item">4</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2007 Mike Karlesky, Mark VanderVoord, Greg Williams</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/auto/colour_reporter.rb</td>
+              <td class="item">4</td>
+              <td class="item">4</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/auto/generate_module.rb</td>
+              <td class="item">2</td>
+              <td class="item">4</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2007 Mike Karlesky, Mark VanderVoord, Greg Williams</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/auto/generate_module.rb</td>
+              <td class="item">4</td>
+              <td class="item">4</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/auto/unity_test_summary.py</td>
+              <td class="item">3</td>
+              <td class="item">6</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2015 Alexander Mueller</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/auto/unity_test_summary.py</td>
+              <td class="item">5</td>
+              <td class="item">5</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/auto/generate_test_runner.rb</td>
+              <td class="item">2</td>
+              <td class="item">4</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2007 Mike Karlesky, Mark VanderVoord, Greg Williams</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/auto/generate_test_runner.rb</td>
+              <td class="item">4</td>
+              <td class="item">4</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/auto/unity_test_summary.rb</td>
+              <td class="item">2</td>
+              <td class="item">4</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2007 Mike Karlesky, Mark VanderVoord, Greg Williams</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/auto/unity_test_summary.rb</td>
+              <td class="item">4</td>
+              <td class="item">4</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/src/unity_internals.h</td>
+              <td class="item">2</td>
+              <td class="item">4</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2007-14 Mike Karlesky, Mark VanderVoord, Greg Williams</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/src/unity_internals.h</td>
+              <td class="item">4</td>
+              <td class="item">4</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/src/unity.c</td>
+              <td class="item">2</td>
+              <td class="item">4</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2007-14 Mike Karlesky, Mark VanderVoord, Greg Williams</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/src/unity.c</td>
+              <td class="item">4</td>
+              <td class="item">4</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/src/unity.h</td>
+              <td class="item">2</td>
+              <td class="item">4</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2007-14 Mike Karlesky, Mark VanderVoord, Greg Williams</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/src/unity.h</td>
+              <td class="item">4</td>
+              <td class="item">4</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/examples/example_2/makefile</td>
+              <td class="item">2</td>
+              <td class="item">4</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2007 Mike Karlesky, Mark VanderVoord, Greg Williams</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/examples/example_2/makefile</td>
+              <td class="item">4</td>
+              <td class="item">4</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/examples/example_1/makefile</td>
+              <td class="item">2</td>
+              <td class="item">4</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright (c) 2007 Mike Karlesky, Mark VanderVoord, Greg Williams</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/unity/examples/example_1/makefile</td>
+              <td class="item">4</td>
+              <td class="item">4</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/json-patch-tests/README.md</td>
+              <td class="item">62</td>
+              <td class="item">62</td>
+              <td class="item">copyright</td>
+              
+                <td class="item">Copyright 2014 The</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="item">cjson-master/cJSON-master/tests/json-patch-tests/README.md</td>
+              <td class="item">64</td>
+              <td class="item">74</td>
+              <td class="item">license</td>
+              
+                <td class="item"><a href="#license_apache-2.0">apache-2.0</a></td>
+              
+            </tr>
+          
+        
+      </tbody>
+    </table>
+    
+    </div>
+
+    <div id="allLi">
+    
+    <table class="item">
+      <h3>所有许可证详细信息</h3>
+      <thead>
+        <tr>
+          <th class="item" id = "test">许可证名称</th>
+          <th class="item">类型</th>
+          <th class="item">许可证归属</th>
+          <th class="item">官方链接</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr id="license_apache-2.0">
+            <td class="item">apache-2.0</td>
+            <td class="item">Permissive</td>
+            <td class="item">Apache Software Foundation</td> 
+            <td class="item"><a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">http://www.apache.org/licenses/LICENSE-2.0</a></td>
+          </tr>
+        
+          <tr id="license_mit">
+            <td class="item">mit</td>
+            <td class="item">Permissive</td>
+            <td class="item">MIT</td> 
+            <td class="item"><a href="http://opensource.org/licenses/mit-license.php" target="_blank">http://opensource.org/licenses/mit-license.php</a></td>
+          </tr>
+        
+      </tbody>
+    </table>
+    
+   </div>
+  </body>
+</html>
