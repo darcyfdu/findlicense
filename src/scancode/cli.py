@@ -696,7 +696,7 @@ def save_results(scanners, only_findings, files_count, results, format, options,
             echo_stderr('\nInvalid template passed.', fg='red')
             save_logs('\nInvalid template passed.',output_file)
         else:
-            for template_chunk in as_template(results, template=format):
+            for template_chunk in as_template(results, files_count,output_file,template=format):
                 try:
                     output_file.write(template_chunk)
                 except Exception as e:

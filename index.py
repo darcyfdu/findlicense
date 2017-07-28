@@ -55,9 +55,6 @@ def licenses():
     for row in cursor:
         licensenslist.append({'name':row[0],'owner':row[1],'url':row[2],'isNet':(row[0] in netdisLi),'isTM':(row[0] in TMLi),'isSame':(row[0] in sameLi),'isOS':(row[0] in openLi),'isNP':(row[0] in notPatLi),'isMo':(row[0] in ModLi)})
     return '{"results":'+json.dumps(licensenslist,encoding="utf-8")+'}'
-@app.route('/new', methods=['GET', 'POST'])
-def setting():
-    return render_template('new.html')
 @app.route('/addlicense', methods=['GET', 'POST'])
 def addlicense():
     conn = sqlite3.connect('data.db')
@@ -164,9 +161,7 @@ def add():
     ISOTIMEFORMAT='-%Y-%m-%d-%X'
     scantime = time.strftime(ISOTIMEFORMAT,time.localtime())
     cm = './scancode -cl  -n 8 --format html templates/'+name+' templates/'+name+scantime+'.html'
-    fo = open("logs/"+scantime+'.log', "w+")
-    fo.write(os.popen(cm).read())
-    fo.close()
+    os.popen(cm)
     cm = 'rm -rf templates/'+name
     os.popen(cm)
     session['savename'] = name+scantime+'.html'
