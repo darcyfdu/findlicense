@@ -84,6 +84,7 @@
       * {
         font-family: Helvetica, Arial, sans-serif;
       }
+      tr{page-break-inside: avoid;}
     </style>
   </head>
   <body>
@@ -174,7 +175,7 @@
  <div id="allLi">
     {% if licenses %}
     <table class="license">
-      <h3>所有许可证详细信息</h3>
+      <h3>许可证详细信息</h3>
       <thead>
         <tr>
           <th class="license" id = "test">许可证名称</th>
@@ -196,11 +197,11 @@
     </table>
     {% endif %}
    </div>
+   <h2>潜在风险分析</h2>
     <div id="Conflict">
     {% if files.isConflict %}
     <table class="item">
-      <h3>警告！</h3>
-      <h4>以下许可证条款之间存在冲突，不能一起使用</h4>
+      <h3>许可证冲突风险</h3><h4>以下许可证条款之间存在冲突，不能一起使用</h4>
       <thead>
         <tr>
           <th class="item">许可证1</th>
@@ -212,18 +213,18 @@
       <tbody>
         {% for data in files.isConflict %}
             <tr>
-              <td class="item">{{ data.licenses1 }}</td>
-              <td class="item">
+              <td class="item" rowspan={{len(data.loacal1)}}>{{ data.licenses1 }}</td>
               {% for item in data.loacal1 %}
-              {{item}}<br />
-              {% endfor %}
-              </td>
-              <td class="item">{{ data.licenses2 }}</td>
               <td class="item">
-              {% for item in data.loacal2 %}
-              {{item}}<br />
-              {% endfor %}
+              {{item}}
               </td>
+              {% endfor %}
+              <td class="item" rowspan={{len(data.loacal2)}}>{{ data.licenses2 }}</td>
+              {% for item in data.loacal2 %}
+              <td class="item">
+              {{item}}
+              </td>
+              {% endfor %}
             </tr>
         {% endfor %}
       </tbody>
@@ -234,8 +235,7 @@
     <div id="open">
     {% if files.isSameLi %}
     <table class="item">
-      <h3>如果您想基于此软件发布开源软件，请注意：</h3>
-      <h4>以下文件的许可证要求衍生作品必须采用同一许可证</h4>
+      <h3>商业化风险</h3><h4>-以下文件的许可证要求衍生作品必须采用同一许可证</h4>
       <thead>
         <tr>
           <th class="item">许可证</th>
@@ -244,14 +244,14 @@
       </thead>
       <tbody>
         {% for data in files.isSameLi %}
+            {% for item in data.loacal %}
             <tr>
               <td class="item">{{ data.licenses }}</td>
               <td class="item">
-              {% for item in data.loacal %}
-              {{item}}<br />
-              {% endfor %}
+              {{item}}
               </td>
             </tr>
+            {% endfor %}
         {% endfor %}
       </tbody>
     </table>
@@ -261,8 +261,7 @@
     <div id="commercial">
     {% if files.isOpensource %}
     <table class="item">
-    <h3>如果您想基于此软件发布商业软件，请注意：</h3>
-      <h4>以下文件的许可证不允许衍生作品闭源发布</h4>
+    <h3>商业化风险</h3><h4>-以下文件的许可证不允许衍生作品闭源发布</h4>
       <thead>
         <tr>
           <th class="item">许可证</th>
@@ -271,14 +270,14 @@
       </thead>
       <tbody>
         {% for data in files.isOpensource %}
+            {% for item in data.loacal %}
             <tr>
               <td class="item">{{ data.licenses }}</td>
-              <td class="item">
-              {% for item in data.loacal %}
-              {{item}}<br />
-              {% endfor %}
+              <td class="item"> 
+              {{item}}
               </td>
             </tr>
+            {% endfor %}
         {% endfor %}
       </tbody>
     </table>
@@ -288,8 +287,7 @@
     <div id="cloud">
     {% if files.isNetdis %}
     <table class="item">
-    <h3>如果您想基于此软件提供云服务，请注意：</h3>
-      <h4>以下文件的许可证不允许衍生作品闭源提供服务</h4>
+    <h3>服务提供风险</h3><h4>-以下文件的许可证不允许衍生作品闭源提供服务</h4>
       <thead>
         <tr>
           <th class="item">许可证</th>
@@ -302,7 +300,7 @@
               <td class="item">{{ data.licenses }}</td>
               <td class="item">
               {% for item in data.loacal %}
-              {{item}}<br />
+              {{item}}
               {% endfor %}
               </td>
             </tr>
@@ -313,10 +311,9 @@
     </div>
     
     <div id="other">
-    <h3>另外，以下条款您也需要关注：</h3>
     {% if files.isNotPatent %}
     <table class="item">
-      <h4>以下文件的许可证不承认衍生作品申请专利</h4>
+      <h3>专利侵权风险</h3><h4>-以下文件的许可证不承认衍生作品申请专利</h4>
       <thead>
         <tr>
           <th class="item">许可证</th>
@@ -325,21 +322,21 @@
       </thead>
       <tbody>
         {% for data in files.isNotPatent %}
+	    {% for item in data.loacal %}
             <tr>
               <td class="item">{{ data.licenses }}</td>
               <td class="item"> 
-              {% for item in data.loacal %}
-              {{item}}<br />
-              {% endfor %}
+              {{item}}
               </td>
             </tr>
+            {% endfor %}
         {% endfor %}
       </tbody>
     </table>
     {% endif %}
     {% if files.isModified %}
     <table class="item">
-      <h4>以下文件的许可证要求衍生作品必须声明修改以明确版权</h4>
+      <h3>版权归属风险</h3><h4>-以下文件的许可证要求衍生作品必须声明修改以明确版权</h4>
       <thead>
         <tr>
           <th class="item">许可证</th>
@@ -348,21 +345,21 @@
       </thead>
       <tbody>
         {% for data in files.isModified %}
+            {% for item in data.loacal %}
             <tr>
               <td class="item">{{ data.licenses }}</td>
               <td class="item">
-              {% for item in data.loacal %}
-              {{item}}<br />
-              {% endfor %}
+              {{item}}
               </td>
             </tr>
+            {% endfor %}
         {% endfor %}
       </tbody>
     </table>
     {% endif %}
     {% if files.isTrademark %}
     <table class="item">
-      <h4>以下文件的许可证不承认衍生作品申请商标</h4>
+      <h3>商标使用风险</h3><h4>-以下文件的许可证不承认衍生作品申请商标</h4>
       <thead>
         <tr>
           <th class="item">许可证</th>
@@ -371,14 +368,14 @@
       </thead>
       <tbody>
         {% for data in files.isTrademark %}
+            {% for item in data.loacal %}
             <tr>
               <td class="item">{{ data.licenses }}</td>
               <td class="item">
-              {% for item in data.loacal %}
-              {{item}}<br />
-              {% endfor %}
+              {{item}}
               </td>
             </tr>
+           {% endfor %}
         {% endfor %}
       </tbody>
     </table>
@@ -386,7 +383,7 @@
     
     {% if files.mayConflict %}
     <table class="item">
-      <h4>可能会产生冲突的许可证</h4>
+      <h3>潜在许可证冲突风险</h3><h4>-可能会产生冲突的许可证</h4>
       <thead>
         <tr>
           <th class="item">当前软件的许可证</th>
@@ -395,13 +392,14 @@
       </thead>
       <tbody>
         {% for data in files.mayConflict %}
+            {% for cf in data.maycf %}
             <tr>
               <td class="item">{{ data.licenses }}</td>
-              <td class="item">{% for cf in data.maycf %}
-                  {{cf}}<br />
-                  {% endfor %}
+              <td class="item">
+                  {{cf}}             
               </td>
             </tr>
+            {% endfor %}
         {% endfor %}
       </tbody>
     </table>

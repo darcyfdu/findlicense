@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <title>检测结果</title>
+
+    <style type="text/css">
+       table.report{
+        width:100%;
+        border-collapse:collapse;
+        border: 1px solid #FF8C00;
+        margin-bottom: 20px;
+	background-color: white;
+      }
+      table.item{
+        width:100%;
+        border-collapse:collapse;
+        border: 1px solid #A52A2A;
+        margin-bottom: 20px;
+      }
+      table.license{
+        width:100%;
+        border-collapse:collapse;
+        border: 1px solid #6B8E23;
+        margin-bottom: 20px;
+      }
+      td.report{
+        font-size: 12px;
+        padding: 5px 5px;
+        border-style: solid;
+        border-width: 0px;
+        overflow: hidden;
+
+      }
+      th.report{
+        font-size: 12px;
+        padding:10px 5px;
+        border-style: solid;
+        border-width: 0px;
+        overflow: hidden;
+        border-color: white;
+        color: #FFFFFF;
+        background-color: #FF8C00;
+      }
+      td.item{
+        text-align:center;
+        font-size: 15px;
+        padding: 5px 5px;
+        border-style: solid;
+        border-width: 0px;
+	border-color: #A52A2A;
+        overflow: hidden;
+      }
+      th.item{
+        font-size: 15px;
+        padding:10px 5px;
+        border-style: solid;
+        border-width: 1px;
+        overflow: hidden;
+        border-color: #A52A2A;
+        color: #fff;
+        background-color: #A52A2A;
+      }
+      td.license{
+        text-align:center;
+        font-size: 15px;
+        padding: 5px 5px;
+        border-style: solid;
+        border-width: 0px;
+	border-color: #6B8E23;
+        overflow: hidden;
+      }
+      th.license{
+        font-size: 15px;
+        padding:10px 5px;
+        border-style: solid;
+        border-width: 1px;
+        overflow: hidden;
+        border-color: #6B8E23;
+        color: #fff;
+        background-color: #6B8E23;
+      }
+      tr:nth-child()  { background-color:#FFFFFF;}
+      * {
+        font-family: Helvetica, Arial, sans-serif;
+      }
+      tr{page-break-inside: avoid;}
+    </style>
+  </head>
+  <body>
+  <button onclick="{location.href='/savepdf'}">导出PDF</button>
+  <h1 align="center">开源许可证检测报告</h1>
+  <h3>
+    
+    项目名称:
+    jquery-master<br>
+    
+    
+    
+    最后一次分析时间：
+    2017-09-19-17:32:52<br>
+    
+  </h3>
+  <table class="report">
+    
+    <tr>
+    <th class="report" border="0" colspan="3" align="center" bgcolor="#FF8C00">
+    <h3><font color="#FFFFFF">文件总数:326</font></h3>
+    </th>
+    </tr>
+    
+    <tr>
+    <td width = "15%" align="center" bgcolor="#FF8C00">
+    <h3><font color="#FFFFFF">结果概览</font></h3>
+    </td>
+    
+    <td colspan="2" width = "85%" bgcolor="#FFFFFF">&emsp;软件包含
+    4
+    种开源许可证，
+    
+    
+    分别为<br>
+    
+    &emsp;<img src="/static/logo.jpg"/>&emsp;apache-2.0 &emsp;&emsp;1个文件<br>
+    
+    &emsp;<img src="/static/logo.jpg"/>&emsp;bsd-new &emsp;&emsp;26个文件<br>
+    
+    &emsp;<img src="/static/logo.jpg"/>&emsp;gpl &emsp;&emsp;7个文件<br>
+    
+    &emsp;<img src="/static/logo.jpg"/>&emsp;mit &emsp;&emsp;24个文件<br>
+    
+    
+    </td>
+    </tr>
+    <tr>
+    <td width = "15%" align="center" bgcolor="#FF8C00">
+    <h3><font color="#FFFFFF">风险评级</font></h3>
+    </td>
+    <td width = "10%" align="center" bgcolor="#FFFFFF">
+    
+    <h3>中风险</h3>
+    
+    </td>
+     <td width = "75%" bgcolor="#FFFFFF">
+    
+    
+    
+    
+    
+    
+    <img src="/static/logo.jpg"/>&emsp;版权归属风险<br>
+    
+    
+    <img src="/static/logo.jpg"/>&emsp;商标使用风险<br>
+    
+    
+    </td>
+    </tr>
+  </table>
+ <div id="allLi">
+    
+    <table class="license">
+      <h3>所有许可证详细信息</h3>
+      <thead>
+        <tr>
+          <th class="license" id = "test">许可证名称</th>
+          <th class="license">类型</th>
+          <th class="license">许可证归属</th>
+          <th class="license">官方链接</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr id="license_apache-2.0">
+            <td class="license">apache-2.0</td>
+            <td class="license">Permissive</td>
+            <td class="license">Apache Software Foundation</td> 
+            <td class="license"><a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">http://www.apache.org/licenses/LICENSE-2.0</a></td>
+          </tr>
+        
+          <tr id="license_bsd-new">
+            <td class="license">bsd-new</td>
+            <td class="license">Permissive</td>
+            <td class="license">Regents of the University of California</td> 
+            <td class="license"><a href="http://www.opensource.org/licenses/BSD-3-Clause" target="_blank">http://www.opensource.org/licenses/BSD-3-Clause</a></td>
+          </tr>
+        
+          <tr id="license_gpl">
+            <td class="license">gpl</td>
+            <td class="license">Copyleft</td>
+            <td class="license">Free Software Foundation (FSF)</td> 
+            <td class="license"></td>
+          </tr>
+        
+          <tr id="license_mit">
+            <td class="license">mit</td>
+            <td class="license">Permissive</td>
+            <td class="license">MIT</td> 
+            <td class="license"><a href="http://opensource.org/licenses/mit-license.php" target="_blank">http://opensource.org/licenses/mit-license.php</a></td>
+          </tr>
+        
+      </tbody>
+    </table>
+    
+   </div>
+   <h2>潜在风险分析</h2>
+    <div id="Conflict">
+    
+    </div>
+    
+    <div id="open">
+    
+    </div>
+    
+    <div id="commercial">
+    
+    </div>
+    
+    <div id="cloud">
+    
+    </div>
+    
+    <div id="other">
+    <h3>另外，以下条款您也需要关注：</h3>
+    
+    
+    <table class="item">
+      <h4>以下文件的许可证要求衍生作品必须声明修改以明确版权</h4>
+      <thead>
+        <tr>
+          <th class="item">许可证</th>
+          <th class="item">包含许可证的文件路径</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+            
+            <tr>
+              <td class="item">apache-2.0</td>
+              <td class="item">
+              jquery-master/jquery-master/external/qunit/qunit.js
+              </td>
+            </tr>
+            
+        
+      </tbody>
+    </table>
+    
+    
+    <table class="item">
+      <h4>以下文件的许可证不承认衍生作品申请商标</h4>
+      <thead>
+        <tr>
+          <th class="item">许可证</th>
+          <th class="item">包含许可证的文件路径</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+            <tr>
+              <td class="item">apache-2.0</td>
+              <td class="item">
+              
+              jquery-master/jquery-master/external/qunit/qunit.js<br />
+              
+              </td>
+            </tr>
+        
+      </tbody>
+    </table>
+    
+    
+    
+    </div>
+    
+    <div id="all">
+    
+    <table class="license">
+      <h3>所有版权和许可证信息</h3>
+      <thead>
+        <tr>
+          <th class="license">文件路径</th>
+          <th class="license">开始位置</th>
+          <th class="license">结束位置</th>
+          <th class="license">信息类型</th>
+          <th class="license">许可证/版权详情</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/LICENSE.txt</td>
+              <td class="license">1</td>
+              <td class="license">1</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright JS Foundation</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/LICENSE.txt</td>
+              <td class="license">12</td>
+              <td class="license">29</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/Gruntfile.js</td>
+              <td class="license">87</td>
+              <td class="license">87</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/Gruntfile.js</td>
+              <td class="license">88</td>
+              <td class="license">88</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/Gruntfile.js</td>
+              <td class="license">169</td>
+              <td class="license">172</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">(c) JS Foundation</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/Gruntfile.js</td>
+              <td class="license">170</td>
+              <td class="license">170</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/Gruntfile.js</td>
+              <td class="license">170</td>
+              <td class="license">170</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_gpl">gpl</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/package.json</td>
+              <td class="license">25</td>
+              <td class="license">25</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/src/wrapper.js</td>
+              <td class="license">9</td>
+              <td class="license">11</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright JS Foundation</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/src/wrapper.js</td>
+              <td class="license">10</td>
+              <td class="license">10</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/src/wrapper.js</td>
+              <td class="license">11</td>
+              <td class="license">11</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/src/wrapper.js</td>
+              <td class="license">11</td>
+              <td class="license">11</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_gpl">gpl</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/npo/npo.js</td>
+              <td class="license">1</td>
+              <td class="license">3</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">(c) Kyle Simpson</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/npo/npo.js</td>
+              <td class="license">3</td>
+              <td class="license">3</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/npo/npo.js</td>
+              <td class="license">3</td>
+              <td class="license">3</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/qunit-assert-step/MIT-LICENSE.txt</td>
+              <td class="license">1</td>
+              <td class="license">2</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright jQuery Foundation</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/qunit-assert-step/MIT-LICENSE.txt</td>
+              <td class="license">4</td>
+              <td class="license">21</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/requirejs/require.js</td>
+              <td class="license">1</td>
+              <td class="license">2</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright (c) 2010-2015, The Dojo Foundation</td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sizzle/LICENSE.txt</td>
+              <td class="license">1</td>
+              <td class="license">1</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright jQuery Foundation</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sizzle/LICENSE.txt</td>
+              <td class="license">12</td>
+              <td class="license">29</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sizzle/dist/sizzle.js</td>
+              <td class="license">5</td>
+              <td class="license">7</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright jQuery Foundation</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sizzle/dist/sizzle.js</td>
+              <td class="license">6</td>
+              <td class="license">6</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sizzle/dist/sizzle.js</td>
+              <td class="license">7</td>
+              <td class="license">7</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sizzle/dist/sizzle.js</td>
+              <td class="license">7</td>
+              <td class="license">7</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_gpl">gpl</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sizzle/dist/sizzle.min.js</td>
+              <td class="license">1</td>
+              <td class="license">3</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">(c) jQuery Foundation, Inc. jquery.org/license</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sizzle/dist/sizzle.min.js</td>
+              <td class="license">1</td>
+              <td class="license">1</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sizzle/dist/sizzle.min.js</td>
+              <td class="license">1</td>
+              <td class="license">1</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_gpl">gpl</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/qunit/MIT-LICENSE.txt</td>
+              <td class="license">1</td>
+              <td class="license">2</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright 2013 jQuery Foundation</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/qunit/MIT-LICENSE.txt</td>
+              <td class="license">4</td>
+              <td class="license">21</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/qunit/LICENSE.txt</td>
+              <td class="license">1</td>
+              <td class="license">1</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright jQuery Foundation</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/qunit/LICENSE.txt</td>
+              <td class="license">12</td>
+              <td class="license">29</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/qunit/qunit.css</td>
+              <td class="license">5</td>
+              <td class="license">7</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright jQuery Foundation</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/qunit/qunit.css</td>
+              <td class="license">6</td>
+              <td class="license">6</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/qunit/qunit.css</td>
+              <td class="license">7</td>
+              <td class="license">7</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/qunit/qunit.css</td>
+              <td class="license">7</td>
+              <td class="license">7</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_gpl">gpl</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/qunit/qunit.js</td>
+              <td class="license">5</td>
+              <td class="license">7</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright jQuery Foundation</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/qunit/qunit.js</td>
+              <td class="license">6</td>
+              <td class="license">6</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/qunit/qunit.js</td>
+              <td class="license">7</td>
+              <td class="license">7</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/qunit/qunit.js</td>
+              <td class="license">7</td>
+              <td class="license">7</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_gpl">gpl</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/qunit/qunit.js</td>
+              <td class="license">2208</td>
+              <td class="license">2225</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_apache-2.0">apache-2.0</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/qunit/qunit.js</td>
+              <td class="license">2212</td>
+              <td class="license">2213</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright 2006 Google Inc.</td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">7</td>
+              <td class="license">7</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_bsd-new">bsd-new</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">9</td>
+              <td class="license">10</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright (c) 2010-2014, Christian Johansen, christian@cjohansen.no</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">12</td>
+              <td class="license">33</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_bsd-new">bsd-new</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">677</td>
+              <td class="license">677</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_bsd-new">bsd-new</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">679</td>
+              <td class="license">679</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright (c) 2010-2014 Christian Johansen</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">1234</td>
+              <td class="license">1234</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_bsd-new">bsd-new</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">1236</td>
+              <td class="license">1236</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright (c) 2010-2013 Christian Johansen</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">1286</td>
+              <td class="license">1286</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_bsd-new">bsd-new</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">1288</td>
+              <td class="license">1288</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright (c) 2010-2013 Christian Johansen</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">1847</td>
+              <td class="license">1847</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_bsd-new">bsd-new</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">1849</td>
+              <td class="license">1849</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright (c) 2010-2014 Christian Johansen</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">1903</td>
+              <td class="license">1903</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_bsd-new">bsd-new</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">1905</td>
+              <td class="license">1905</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright (c) 2012 Maximilian Antoni</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">2161</td>
+              <td class="license">2161</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_bsd-new">bsd-new</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">2163</td>
+              <td class="license">2163</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright (c) 2010-2014 Christian Johansen</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">2258</td>
+              <td class="license">2258</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_bsd-new">bsd-new</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">2260</td>
+              <td class="license">2261</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright (c) 2010-2013 Christian Johansen
+Copyright (c) 2013 Maximilian Antoni</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">2498</td>
+              <td class="license">2498</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_bsd-new">bsd-new</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">2500</td>
+              <td class="license">2500</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright (c) 2010-2013 Christian Johansen</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">2959</td>
+              <td class="license">2959</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_bsd-new">bsd-new</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">2961</td>
+              <td class="license">2961</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright (c) 2010-2013 Christian Johansen</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">3411</td>
+              <td class="license">3411</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_bsd-new">bsd-new</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">3413</td>
+              <td class="license">3413</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright (c) 2010-2013 Christian Johansen</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">3614</td>
+              <td class="license">3614</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_bsd-new">bsd-new</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">3616</td>
+              <td class="license">3616</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright (c) 2010-2013 Christian Johansen</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">4101</td>
+              <td class="license">4101</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_bsd-new">bsd-new</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">4103</td>
+              <td class="license">4103</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright (c) 2010-2013 Christian Johansen</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">4277</td>
+              <td class="license">4277</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_bsd-new">bsd-new</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">4279</td>
+              <td class="license">4279</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright (c) 2010-2013 Christian Johansen</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">4345</td>
+              <td class="license">4345</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_bsd-new">bsd-new</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">4347</td>
+              <td class="license">4347</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright (c) 2011 Sven Fuchs, Christian Johansen</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">4455</td>
+              <td class="license">4455</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_bsd-new">bsd-new</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">4457</td>
+              <td class="license">4457</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright (c) 2010-2014 Christian Johansen</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">4780</td>
+              <td class="license">4780</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_bsd-new">bsd-new</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">4782</td>
+              <td class="license">4782</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright (c) 2010-2013 Christian Johansen</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">5499</td>
+              <td class="license">5499</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_bsd-new">bsd-new</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">5501</td>
+              <td class="license">5501</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright (c) 2010-2013 Christian Johansen</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">5747</td>
+              <td class="license">5747</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_bsd-new">bsd-new</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">5749</td>
+              <td class="license">5749</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright (c) 2010-2013 Christian Johansen</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">5846</td>
+              <td class="license">5846</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_bsd-new">bsd-new</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">5848</td>
+              <td class="license">5848</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright (c) 2010-2013 Christian Johansen</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">6012</td>
+              <td class="license">6012</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_bsd-new">bsd-new</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">6014</td>
+              <td class="license">6014</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright (c) 2010-2013 Christian Johansen</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">6112</td>
+              <td class="license">6112</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_bsd-new">bsd-new</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">6114</td>
+              <td class="license">6114</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright (c) 2010-2013 Christian Johansen</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">6220</td>
+              <td class="license">6220</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_bsd-new">bsd-new</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/sinon.js</td>
+              <td class="license">6222</td>
+              <td class="license">6222</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright (c) 2010-2013 Christian Johansen</td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/LICENSE.txt</td>
+              <td class="license">1</td>
+              <td class="license">1</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_bsd-new">bsd-new</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/LICENSE.txt</td>
+              <td class="license">3</td>
+              <td class="license">4</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright (c) 2010-2014, Christian Johansen, christian@cjohansen.no</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/external/sinon/LICENSE.txt</td>
+              <td class="license">6</td>
+              <td class="license">27</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_bsd-new">bsd-new</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/build/release/dist.js</td>
+              <td class="license">44</td>
+              <td class="license">44</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/test/data/jquery-1.9.1.js</td>
+              <td class="license">8</td>
+              <td class="license">10</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright 2005, 2012 jQuery Foundation, Inc.</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/test/data/jquery-1.9.1.js</td>
+              <td class="license">9</td>
+              <td class="license">9</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/test/data/jquery-1.9.1.js</td>
+              <td class="license">10</td>
+              <td class="license">10</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/test/data/jquery-1.9.1.js</td>
+              <td class="license">10</td>
+              <td class="license">10</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_gpl">gpl</a></td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/test/data/jquery-1.9.1.js</td>
+              <td class="license">3808</td>
+              <td class="license">3811</td>
+              <td class="license">copyright</td>
+              
+                <td class="license">Copyright 2012 jQuery Foundation</td>
+              
+            </tr>
+          
+            <tr>
+              <td class="license">jquery-master/jquery-master/test/data/jquery-1.9.1.js</td>
+              <td class="license">3810</td>
+              <td class="license">3810</td>
+              <td class="license">license</td>
+              
+                <td class="license"><a href="#license_mit">mit</a></td>
+              
+            </tr>
+          
+        
+      </tbody>
+    </table>
+    
+    </div>
+
+   
+  </body>
+</html>
