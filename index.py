@@ -10,6 +10,7 @@ import requests
 import urllib
 import random
 import os
+from os.path import join, getsize
 import sys
 import yaml
 import time
@@ -20,9 +21,23 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 app = Flask(__name__)
 app.config.from_object(__name__)
 app.secret_key = '123456'
+def getdirsize(dir):  
+   size = 0L  
+   for root, dirs, files in os.walk(dir):  
+      size += sum([getsize(join(root, name)) for name in files])  
+   return size
 @app.route('/', methods=['GET', 'POST'])
 def index():
     return render_template('index.html')
+@app.route('/history', methods=['GET', 'POST'])
+def history():
+    historylist = []
+    conn = sqlite3.connect('data.db')
+    cursor = conn.execute("SELECT id,name,size,number,starttime,scantime from scanhistory")
+    for row in cursor:
+        historylist.append({'id':'scanhistory/'+row[0]+'.html','name':row[1],'size':row[2],'number':row[3],'starttime':row[4],'scantime':row[5],'delete':'deletehistory/'+row[0]+'.html'})
+    conn.close()
+    return '{"results":'+json.dumps(historylist,encoding="utf-8")+'}'
 @app.route('/licenses', methods=['GET', 'POST'])
 def licenses():
     conn = sqlite3.connect('data.db')
@@ -54,6 +69,7 @@ def licenses():
     cursor = conn.execute("SELECT NAME,OWER,URL from LICENSESLIST")
     for row in cursor:
         licensenslist.append({'name':row[0],'owner':row[1],'url':row[2],'isNet':(row[0] in netdisLi),'isTM':(row[0] in TMLi),'isSame':(row[0] in sameLi),'isOS':(row[0] in openLi),'isNP':(row[0] in notPatLi),'isMo':(row[0] in ModLi)})
+    conn.close()
     return '{"results":'+json.dumps(licensenslist,encoding="utf-8")+'}'
 @app.route('/addlicense', methods=['GET', 'POST'])
 def addlicense():
@@ -108,6 +124,7 @@ def test():
         url = request.form['giturl']
         filename = url.rsplit('/')[-1].rsplit('.')[0]
         session['filename'] = filename
+        session['type'] = 0
         cm = 'git clone '+request.form['giturl']+' templates/'+filename
         os.popen(cm)
         if(os.path.exists('templates/'+filename)):
@@ -119,6 +136,7 @@ def test():
         f=request.files['file1']
         filename = f.filename.lower()
         session['filename'] = filename.rsplit('.',1)[0]
+	session['type'] = 1
         print filename
         f.save(os.path.join(file_dir,filename))
         if '.zip' in filename:
@@ -160,19 +178,33 @@ def add():
     name = session['filename']
     ISOTIMEFORMAT='-%Y-%m-%d-%X'
     scantime = time.strftime(ISOTIMEFORMAT,time.localtime())
+    filesize = getdirsize(r'templates/'+name)
+    conn = sqlite3.connect('data.db')
+    conn.execute("INSERT INTO scanhistory (id,name,size,starttime) VALUES (?,?,?,?)",(name+scantime,name,'%.3f MB'%(filesize/1024.000/1024.000),scantime[1:]))
+    conn.commit()
+    conn.close()
     cm = './scancode -cl  -n 8 --format html templates/'+name+' templates/'+name+scantime+'.html'
     os.popen(cm)
     cm = 'rm -rf templates/'+name
     os.popen(cm)
     session['savename'] = name+scantime+'.html'
-    return render_template(name+scantime+'.html')
-@app.route('/src/licensedcode/data/licenses/<path>', methods=['GET','POST'])
+    filetype = '本地文件'
+    if(session['type'] == 0):
+        filetype = '仓库地址'
+    return render_template(name+scantime+'.html',scantime=scantime,filetype=filetype)
+@app.route('/scanhistory/<path>', methods=['GET','POST'])
 def today(path):
-    base_dir = os.path.dirname(__file__)+'src/licensedcode/data/licenses/'
-    resp = open(os.path.join(base_dir, path)).read()#.replace('\n','<br />')
-    #resp.headers["Content-type"]="text/html;charset=UTF-8"
-    #return resp
-    return render_template('licenses.html',data=resp)
+    return render_template(path)
+@app.route('/deletehistory/<path>', methods=['GET','POST'])
+def deletehistory(path):
+    cm = 'rm -rf templates/'+path
+    os.popen(cm)
+    filename = path.rsplit('.',1)[0]
+    conn = sqlite3.connect('data.db')
+    conn.execute("DELETE from scanhistory where ID='%s'" % filename)
+    conn.commit()
+    conn.close()
+    return '删除成功'
 @app.route('/savepdf', methods=['GET','POST'])
 def savepfd():
     savename = 'templates/' + session['savename']

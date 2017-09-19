@@ -120,11 +120,34 @@
 		</div>
 	   </div>
       </li>
+      <li style="background: #ffffff">
+	    <div class="licenses">
+		<div class="panel panel-default">
+			  <div class="panel-heading">
+			  	<h1 class="panel-title">历史扫描记录</h1>
+			 </div>
+		          <div style="overflow-x:hidden;overflow-y:auto;width:100%; height:80vh;">
+			  <table class="table" id ="history-table">
+				<tr>
+				  <td>文件名</td>
+				  <td>文件大小</td>
+                                  <td>文件个数</td>
+				  <td>开始时间</td>
+		                  <td>扫描用时(s)</td>
+				  <td>报告</td>
+				</tr>
+			  </table>
+			</div>
+		       </div>
+		</div>
+	   </div>
+      </li>
     </ul>
 
     <div  style="position: absolute; bottom: 0; left: 0; text-align: center; width: 100%;">
       <button onclick="first();">主页</button>
       <button onclick="second();">设置</button>
+      <button onclick="third();">历史</button>
     </div>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
@@ -193,9 +216,27 @@
 
 <script type="text/javascript">
 var fkpage;
+var historyList;
 function first(){
   var tmp = fkpage.setSlideMode(34); 
   fkpage.goToSlide(1);
+}
+function third(){
+  var tmp = fkpage.setSlideMode(34); 
+  fkpage.goToSlide(3);
+  var t2 = window.setTimeout("loadHistory()",3000);
+}
+function loadHistory(){
+$.ajax({url:"/history",success:function(response){
+  var obj = JSON.parse(response);
+  $("#history-table tr:gt(0)").remove();
+  historyList=new Array();
+  for (var i=0;i<obj.results.length;i++){
+    historyList[i] = obj.results[i].delete;
+    var newRow = "<tr><td>"+obj.results[i].name+"</td><td>"+obj.results[i].size+"</td><td>"+obj.results[i].number+"</td><td>"+obj.results[i].starttime+"</td><td>"+obj.results[i].scantime+"</td><td><button type=\"button\ onclick=\" \"><a href=\"/"+obj.results[i].id+"\" target=\"_blank\">查看</a></button>&nbsp;<button type=\"button\" onclick=\"detelehistory("+i+")\";>删除</button></td></tr>";
+    $("#history-table").append(newRow);
+} 
+}});
 }
 function loadData(){
 $.ajax({url:"/licenses",success:function(response){
@@ -205,6 +246,12 @@ $.ajax({url:"/licenses",success:function(response){
     var newRow = "<tr><td>"+obj.results[i].name+"</td><td>"+obj.results[i].owner+"</td><td>"+obj.results[i].isOS+"</td><td>"+obj.results[i].isNet+"</td><td>"+obj.results[i].isSame+"</td><td>"+obj.results[i].isNP+"</td><td>"+obj.results[i].isTM+"</td><td>"+obj.results[i].isMo+"</td><td>"+obj.results[i].url+"</td></tr>";
     $("#license-table").append(newRow);
 } 
+}});
+}
+function detelehistory(num){
+  $.ajax({url:historyList[num],success:function(response){
+  alert(response);
+  loadHistory();
 }});
 }
 function second(){

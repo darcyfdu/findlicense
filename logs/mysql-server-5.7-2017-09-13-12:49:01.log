@@ -1,0 +1,35 @@
+2017-09-13-12:49:07 Scanning files for: licenses, copyrights with 8 process(es)...
+2017-09-13-12:49:07 Building license detection index...
+2017-09-13-04:49:08 Done.
+2017-09-13-04:49:08 Scanning files...
+2017-09-13-05:30:23 Scanning done.
+2017-09-13-05:30:23 Some files failed to scan properly. See scan for details:
+2017-09-13-05:30:23  mysql-server-5.7/mysql-test/suite/rpl/r/rpl_non_direct_stm_mixing_engines.result
+2017-09-13-05:30:23  mysql-server-5.7/mysql-test/suite/json/r/json_conversions.result
+2017-09-13-05:30:23  mysql-server-5.7/mysql-test/suite/engines/funcs/r/ld_all_number_string_calendar_types.result
+2017-09-13-05:30:23  mysql-server-5.7/mysql-test/suite/engines/iuds/t/type_bit_iuds.test
+2017-09-13-05:30:23  mysql-server-5.7/mysql-test/suite/engines/iuds/t/insert_calendar.test
+2017-09-13-05:30:23  mysql-server-5.7/mysql-test/suite/engines/iuds/r/insert_number.result
+2017-09-13-05:30:23  mysql-server-5.7/mysql-test/suite/engines/iuds/r/insert_calendar.result
+2017-09-13-05:30:23  mysql-server-5.7/mysql-test/suite/engines/iuds/r/strings_update_delete.result
+2017-09-13-05:30:23  mysql-server-5.7/mysql-test/suite/engines/iuds/r/type_bit_iuds.result
+2017-09-13-05:30:23  mysql-server-5.7/mysql-test/suite/perfschema/r/event_aggregate_no_h.result
+2017-09-13-05:30:23  mysql-server-5.7/mysql-test/suite/perfschema/r/event_aggregate.result
+2017-09-13-05:30:23  mysql-server-5.7/mysql-test/suite/funcs_2/r/myisam_charset.result
+2017-09-13-05:30:23  mysql-server-5.7/mysql-test/suite/funcs_2/r/memory_charset.result
+2017-09-13-05:30:23  mysql-server-5.7/mysql-test/suite/funcs_2/r/innodb_charset.result
+2017-09-13-05:30:23  mysql-server-5.7/mysql-test/suite/parts/r/partition_alter1_1_2_innodb.result
+2017-09-13-05:30:23  mysql-server-5.7/mysql-test/suite/parts/r/partition_basic_innodb.result
+2017-09-13-05:30:23  mysql-server-5.7/mysql-test/suite/parts/r/partition_alter1_1_innodb.result
+2017-09-13-05:30:23  mysql-server-5.7/mysql-test/suite/binlog/r/binlog_enforce_gtid_consistency_tmp_consistent.result
+2017-09-13-05:30:23  mysql-server-5.7/mysql-test/suite/binlog/r/binlog_enforce_gtid_consistency_tmp_violation.result
+2017-09-13-05:30:23  mysql-server-5.7/mysql-test/suite/binlog/r/binlog_enforce_gtid_consistency_create_select_consistent.result
+2017-09-13-05:30:23  mysql-server-5.7/mysql-test/suite/binlog/r/binlog_enforce_gtid_consistency_trx_nontrx_consistent.result
+2017-09-13-05:30:23  mysql-server-5.7/mysql-test/suite/binlog/r/binlog_enforce_gtid_consistency_create_select_violation.result
+2017-09-13-05:30:23  mysql-server-5.7/mysql-test/suite/ndb/r/ndb_join_pushdown_bka.result
+2017-09-13-05:30:23 Scan statistics: 28148 files scanned in 2476s.
+2017-09-13-05:30:23 Scan options:    licenses, copyrights with 8 process(es).
+2017-09-13-05:30:23 Scanning speed:  11.37 files per sec.
+2017-09-13-05:30:23 Scanning time:   2474s.
+2017-09-13-05:30:23 Indexing time:   1s.
+2017-09-13-05:30:23 Saving results.

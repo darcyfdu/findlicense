@@ -42,6 +42,7 @@ import time as now
 import traceback
 from types import GeneratorType
 import click
+import sqlite3
 from click.termui import style
 
 from commoncode import filetype
@@ -87,7 +88,6 @@ delimiter = '\n\n  '
 acknowledgment_text = delimiter + acknowledgment_text
 
 notice = acknowledgment_text.strip().replace('  ', '')
-
 def save_logs(text,output_file):
     ISOTIMEFORMAT='%Y-%m-%d-%X'
     scantime = now.strftime(ISOTIMEFORMAT,now.localtime())
@@ -463,6 +463,13 @@ def scan(input_path,
                 echo_stderr(' ' + errored_path, fg='red')
                 save_logs(' ' + errored_path,output_file)
         echo_stderr('Scan statistics: %(files_count)d files scanned in %(total_time)ds.' % locals())
+        filename = os.path.basename(output_file.name).rsplit('.',1)[0] 
+        fileinfo = locals()
+        fileinfo['filename'] = filename
+	conn = sqlite3.connect('data.db')
+        conn.execute("UPDATE scanhistory SET number=%(files_count)d,scantime=%(total_time)d WHERE id='%(filename)s'" % fileinfo)
+        conn.commit()
+        conn.close()
         save_logs('Scan statistics: %(files_count)d files scanned in %(total_time)ds.' % locals(),output_file)
         echo_stderr('Scan options:    %(_scans)s with %(processes)d process(es).' % locals())
         save_logs('Scan options:    %(_scans)s with %(processes)d process(es).' % locals(),output_file)

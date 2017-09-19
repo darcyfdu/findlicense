@@ -338,9 +338,11 @@ def as_template(scanned_files, files_count,output_file, template='html',):
         licenses = OrderedDict(sorted(licenses.items()))
     ISOTIMEFORMAT='-%Y-%m-'
     scantime = time.strftime(ISOTIMEFORMAT,time.localtime())
+    filename = os.path.basename(output_file.name).rsplit(scantime,1)[0]
     files = {
-        'filename':os.path.basename(output_file.name).rsplit(scantime,1)[0],
+        'filename':filename,
         'filecount':files_count,
+        'scantime':os.path.basename(output_file.name).rsplit(filename,1)[1][1:-5],
         'license_length':len(licenses),
         'license_count':countlicense(licenses.keys(),licessloacl),
         'isSameLi':printre(isSameLi(liceses1,conn),licessloacl),

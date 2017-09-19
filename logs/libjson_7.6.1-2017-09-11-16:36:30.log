@@ -1,0 +1,11 @@
+2017-09-11-16:36:30 Scanning files for: licenses, copyrights with 8 process(es)...
+2017-09-11-16:36:30 Building license detection index...
+2017-09-11-08:37:04 Done.
+2017-09-11-08:37:04 Scanning files...
+2017-09-11-08:37:23 Scanning done.
+2017-09-11-08:37:23 libjson_7.6.1-2017-09-11-16:36:30Scan statistics: 255 files scanned in 52s.
+2017-09-11-08:37:23 Scan options:    licenses, copyrights with 8 process(es).
+2017-09-11-08:37:23 Scanning speed:  13.68 files per sec.
+2017-09-11-08:37:23 Scanning time:   18s.
+2017-09-11-08:37:23 Indexing time:   33s.
+2017-09-11-08:37:23 Saving results.
