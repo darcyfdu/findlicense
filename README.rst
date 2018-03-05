@@ -21,8 +21,6 @@ Build and tests status
 
 findlicense是一个许可证扫描工具，可以扫描出开软软件中使用的所有开源许可证并且告知你许可证中包含的相应风险及使用方式。
 
-软件引用自:
-https://github.com/nexB/scancode-toolkit/wiki/Roadmap
-加入了风险扫描和提示的相关功能
+软件在https://github.com/nexB/scancode-toolkit/wiki/Roadmap基础上完成，加入了WEB的图像化界面，并且增加了许可证法律风险扫描和提示的功能、历史扫描记录功能。
 
 
